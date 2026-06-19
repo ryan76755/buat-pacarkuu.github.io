@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>💌 Letter For You</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Caveat:wght@400;600&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="config.js"></script>
+</head>
+<body class="letter-page">
+
+  <div class="paper-bg"></div>
+
+  <article class="letter-wrap">
+    <h1 class="letter-title" id="letterTitle">Happy Monthsary My Love!</h1>
+    <div class="letter-body" id="letterBody"></div>
+    <a href="flowers.html" class="btn-back-letter">← Back</a>
+  </article>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof GIFT_CONFIG === 'undefined') return;
+
+      if (GIFT_CONFIG.letterTitle) {
+        document.getElementById('letterTitle').textContent = GIFT_CONFIG.letterTitle;
+        document.title = GIFT_CONFIG.letterTitle;
+      }
+
+      if (GIFT_CONFIG.letterParagraphs) {
+        document.getElementById('letterBody').innerHTML =
+          GIFT_CONFIG.letterParagraphs.map(p => `<p>${p}</p>`).join('');
+      }
+    });
+  </script>
+
+</body>
+</html>

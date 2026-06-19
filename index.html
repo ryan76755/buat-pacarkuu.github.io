@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>💌 A Gift For You</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body class="center-page">
+
+  <div class="paper-bg"></div>
+
+  <main class="center-content">
+
+    <!-- Kawaii cat SVG -->
+    <div class="cat-wrap">
+      <svg viewBox="0 0 220 230" xmlns="http://www.w3.org/2000/svg" class="cat-svg">
+        <!-- floating flowers -->
+        <text x="52"  y="54" font-size="28" text-anchor="middle">🌸</text>
+        <text x="162" y="50" font-size="24" text-anchor="middle">🌼</text>
+        <text x="110" y="30" font-size="22" text-anchor="middle">🌺</text>
+        <!-- heart -->
+        <text x="110" y="72" font-size="28" text-anchor="middle" class="heart-anim">💗</text>
+        <!-- body -->
+        <ellipse cx="110" cy="162" rx="58" ry="52" fill="#fff5f5"/>
+        <!-- head -->
+        <ellipse cx="110" cy="110" rx="52" ry="48" fill="#fff5f5"/>
+        <!-- ears -->
+        <polygon points="72,74 57,44 88,66" fill="#fff5f5"/>
+        <polygon points="148,74 163,44 132,66" fill="#fff5f5"/>
+        <polygon points="73,72 62,50 86,68" fill="#ffc0cb" opacity="0.5"/>
+        <polygon points="147,72 158,50 134,68" fill="#ffc0cb" opacity="0.5"/>
+        <!-- eyes -->
+        <ellipse cx="90"  cy="110" rx="9" ry="9" fill="#3a2020"/>
+        <ellipse cx="130" cy="110" rx="9" ry="9" fill="#3a2020"/>
+        <ellipse cx="92"  cy="108" rx="3" ry="3" fill="white"/>
+        <ellipse cx="132" cy="108" rx="3" ry="3" fill="white"/>
+        <!-- blush -->
+        <ellipse cx="78"  cy="122" rx="12" ry="7" fill="#ffb6c1" opacity="0.7"/>
+        <ellipse cx="142" cy="122" rx="12" ry="7" fill="#ffb6c1" opacity="0.7"/>
+        <!-- nose + smile -->
+        <ellipse cx="110" cy="122" rx="4" ry="3" fill="#c06070"/>
+        <path d="M100 128 Q110 136 120 128" stroke="#c06070" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <!-- whiskers -->
+        <line x1="60"  y1="118" x2="88"  y2="121" stroke="#ccc" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="60"  y1="124" x2="88"  y2="124" stroke="#ccc" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="132" y1="121" x2="160" y2="118" stroke="#ccc" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="132" y1="124" x2="160" y2="124" stroke="#ccc" stroke-width="1.5" stroke-linecap="round"/>
+        <!-- paws -->
+        <ellipse cx="62"  cy="174" rx="22" ry="17" fill="#fff5f5"/>
+        <ellipse cx="158" cy="174" rx="22" ry="17" fill="#fff5f5"/>
+        <!-- tail -->
+        <path d="M155 205 Q192 198 186 176 Q180 160 168 166"
+              stroke="#fff5f5" stroke-width="14" fill="none" stroke-linecap="round"/>
+      </svg>
+    </div>
+
+    <h1 class="main-title">HEY BABY!</h1>
+    <p class="sub-text">Would you like to see your gift?</p>
+
+    <div class="btn-row">
+      <a href="decline.html" class="btn-circle btn-no" title="No">✕</a>
+      <a href="flowers.html" class="btn-circle btn-yes" title="Yes">✓</a>
+    </div>
+
+  </main>
+
+</body>
+</html>

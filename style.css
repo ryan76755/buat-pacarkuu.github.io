@@ -1,0 +1,239 @@
+/* ============================================================
+   style.css  —  shared across all pages
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --red-deep:  #8B0000;
+  --red-main:  #c62828;
+  --red-mid:   #d32f2f;
+  --text-dark: #5a1a1a;
+  --text-mid:  #9a3535;
+}
+
+html, body { height: 100%; }
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background: #ede8e2;
+  color: var(--text-dark);
+  min-height: 100vh;
+}
+
+/* ===== CRUMPLED PAPER ===== */
+.paper-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-color: #ede8e2;
+  background-image:
+    repeating-linear-gradient(47deg,  transparent, transparent 40px, rgba(160,140,120,.09) 40px, rgba(160,140,120,.09) 41px),
+    repeating-linear-gradient(-38deg, transparent, transparent 55px, rgba(140,120,100,.07) 55px, rgba(140,120,100,.07) 56px),
+    repeating-linear-gradient(70deg,  transparent, transparent 80px, rgba(180,160,140,.06) 80px, rgba(180,160,140,.06) 81px);
+}
+.paper-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 40% at 20% 30%, rgba(255,255,255,.18) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 35% at 76% 65%, rgba(255,255,255,.14) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 50% at 50% 10%, rgba(0,0,0,.04)       0%, transparent 70%),
+    radial-gradient(ellipse 70% 30% at 10% 80%, rgba(0,0,0,.05)       0%, transparent 70%);
+}
+
+/* ===== CENTER LAYOUT (welcome, decline, flowers) ===== */
+.center-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.center-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 32px 24px;
+  text-align: center;
+  animation: pageFadeIn .45s cubic-bezier(.25,.8,.25,1) both;
+}
+
+@keyframes pageFadeIn {
+  from { opacity: 0; transform: translateY(14px) scale(.97); }
+  to   { opacity: 1; transform: translateY(0)   scale(1); }
+}
+
+/* ===== KAWAII CAT ===== */
+.cat-wrap { margin-bottom: 4px; }
+.cat-svg  { width: 200px; height: 200px; filter: drop-shadow(0 6px 18px rgba(0,0,0,.10)); }
+.heart-anim { animation: floatHeart 2.4s ease-in-out infinite; display: inline-block; }
+@keyframes floatHeart {
+  0%,100% { transform: translateY(0); }
+  50%      { transform: translateY(-7px); }
+}
+
+/* ===== TITLES ===== */
+.main-title {
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(2.2rem, 8vw, 3.6rem);
+  font-weight: 800;
+  color: var(--red-main);
+  letter-spacing: .05em;
+  text-shadow: 1px 2px 0 rgba(139,0,0,.14);
+  line-height: 1.1;
+}
+.main-title.decline { font-size: clamp(2rem, 7vw, 3.2rem); }
+
+.sub-text {
+  font-size: .76rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--text-mid);
+  margin-top: 2px;
+}
+
+/* ===== YES / NO BUTTONS ===== */
+.btn-row {
+  display: flex;
+  gap: 24px;
+  margin-top: 16px;
+  justify-content: center;
+}
+
+.btn-circle {
+  width: 66px;
+  height: 66px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: white;
+  background: var(--red-main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 5px 18px rgba(0,0,0,.20);
+  transition: transform .15s, box-shadow .15s;
+}
+.btn-circle:hover  { transform: scale(1.12); box-shadow: 0 10px 28px rgba(0,0,0,.26); }
+.btn-circle:active { transform: scale(.95); }
+
+.btn-back { margin-top: 18px; font-size: 1.5rem; }
+
+/* ===== FLOWERS PAGE ===== */
+.flowers-title {
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(2rem, 7vw, 3.2rem);
+  font-weight: 700;
+  color: var(--red-deep);
+}
+.flowers-hint {
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--text-mid);
+  margin-top: 2px;
+  margin-bottom: 6px;
+}
+
+.vase-wrap {
+  position: relative;
+  display: inline-block;
+}
+.rose-svg {
+  width: min(270px, 78vw);
+  height: auto;
+  filter: drop-shadow(0 8px 22px rgba(0,0,0,.14));
+}
+
+.envelope-link {
+  position: absolute;
+  bottom: 6px;
+  right: -22px;
+  display: block;
+  transform: rotate(12deg);
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,.22));
+  animation: envBob 2.6s ease-in-out infinite;
+  transition: transform .2s;
+}
+.envelope-link:hover {
+  transform: rotate(0deg) scale(1.14);
+  filter: drop-shadow(0 8px 20px rgba(0,0,0,.30));
+  animation: none;
+}
+@keyframes envBob {
+  0%,100% { transform: rotate(12deg) translateY(0); }
+  50%      { transform: rotate(12deg) translateY(-7px); }
+}
+
+/* ===== LETTER PAGE ===== */
+.letter-page {
+  min-height: 100vh;
+  overflow-y: auto;
+  display: block;
+}
+
+.letter-wrap {
+  position: relative;
+  z-index: 1;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 64px 48px 80px;
+  animation: pageFadeIn .45s cubic-bezier(.25,.8,.25,1) both;
+}
+
+.letter-title {
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  font-weight: 700;
+  color: var(--red-main);
+  text-align: center;
+  margin-bottom: 36px;
+  line-height: 1.3;
+}
+
+.letter-body {
+  font-family: 'Caveat', cursive;
+  font-size: clamp(1.05rem, 2.4vw, 1.3rem);
+  color: var(--text-dark);
+  line-height: 2;
+}
+.letter-body p { margin-bottom: 22px; }
+
+.btn-back-letter {
+  display: block;
+  width: fit-content;
+  margin: 36px auto 0;
+  padding: 12px 30px;
+  background: var(--red-main);
+  color: white;
+  border-radius: 50px;
+  text-decoration: none;
+  font-family: 'Nunito', sans-serif;
+  font-size: .95rem;
+  font-weight: 700;
+  box-shadow: 0 4px 16px rgba(198,40,40,.30);
+  transition: transform .15s, box-shadow .15s;
+}
+.btn-back-letter:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(198,40,40,.36); }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 480px) {
+  .letter-wrap { padding: 40px 24px 60px; }
+  .btn-circle  { width: 58px; height: 58px; font-size: 1.4rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}

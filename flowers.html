@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🌹 Flowers For You</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="config.js"></script>
+</head>
+<body class="center-page">
+
+  <div class="paper-bg"></div>
+
+  <main class="center-content">
+
+    <h1 class="flowers-title">Flowers for you</h1>
+    <p class="flowers-hint">CLICK THE LETTER FOR A SURPRISE</p>
+
+    <div class="vase-wrap">
+
+      <!-- Rose vase SVG -->
+      <svg viewBox="0 0 260 295" xmlns="http://www.w3.org/2000/svg" class="rose-svg">
+        <!-- stems -->
+        <line x1="130" y1="278" x2="100" y2="162" stroke="#5a8c3c" stroke-width="4" stroke-linecap="round"/>
+        <line x1="130" y1="278" x2="130" y2="148" stroke="#5a8c3c" stroke-width="4" stroke-linecap="round"/>
+        <line x1="130" y1="278" x2="162" y2="162" stroke="#5a8c3c" stroke-width="4" stroke-linecap="round"/>
+        <!-- leaves -->
+        <ellipse cx="87"  cy="202" rx="18" ry="8" fill="#5a8c3c" transform="rotate(-40,87,202)"/>
+        <ellipse cx="173" cy="200" rx="18" ry="8" fill="#5a8c3c" transform="rotate(40,173,200)"/>
+        <ellipse cx="118" cy="222" rx="14" ry="6" fill="#4a7c2c" transform="rotate(-20,118,222)"/>
+
+        <!-- Rose LEFT -->
+        <g transform="translate(100,152)">
+          <circle cx="0" cy="0"  r="28" fill="#b71c1c"/>
+          <circle cx="0" cy="-8" r="20" fill="#c62828"/>
+          <circle cx="-8" cy="4" r="18" fill="#c62828"/>
+          <circle cx="8"  cy="4" r="18" fill="#c62828"/>
+          <circle cx="0" cy="-2" r="14" fill="#d32f2f"/>
+          <circle cx="0" cy="-6" r="9"  fill="#e53935"/>
+          <circle cx="0" cy="-4" r="5"  fill="#ef5350"/>
+          <ellipse cx="-20" cy="8"  rx="10" ry="6" fill="#b71c1c" transform="rotate(-30,-20,8)"/>
+          <ellipse cx="20"  cy="8"  rx="10" ry="6" fill="#b71c1c" transform="rotate(30,20,8)"/>
+          <ellipse cx="0" cy="-26" rx="10" ry="6" fill="#b71c1c"/>
+        </g>
+
+        <!-- Rose CENTER -->
+        <g transform="translate(130,136)">
+          <circle cx="0" cy="0"  r="30" fill="#b71c1c"/>
+          <circle cx="0" cy="-9" r="22" fill="#c62828"/>
+          <circle cx="-9" cy="4" r="20" fill="#c62828"/>
+          <circle cx="9"  cy="4" r="20" fill="#c62828"/>
+          <circle cx="0" cy="-2" r="16" fill="#d32f2f"/>
+          <circle cx="0" cy="-7" r="10" fill="#e53935"/>
+          <circle cx="0" cy="-5" r="6"  fill="#ef5350"/>
+          <ellipse cx="-22" cy="8"  rx="11" ry="7" fill="#b71c1c" transform="rotate(-30,-22,8)"/>
+          <ellipse cx="22"  cy="8"  rx="11" ry="7" fill="#b71c1c" transform="rotate(30,22,8)"/>
+          <ellipse cx="0" cy="-28" rx="11" ry="7" fill="#b71c1c"/>
+        </g>
+
+        <!-- Rose RIGHT -->
+        <g transform="translate(162,152)">
+          <circle cx="0" cy="0"  r="28" fill="#b71c1c"/>
+          <circle cx="0" cy="-8" r="20" fill="#c62828"/>
+          <circle cx="-8" cy="4" r="18" fill="#c62828"/>
+          <circle cx="8"  cy="4" r="18" fill="#c62828"/>
+          <circle cx="0" cy="-2" r="14" fill="#d32f2f"/>
+          <circle cx="0" cy="-6" r="9"  fill="#e53935"/>
+          <circle cx="0" cy="-4" r="5"  fill="#ef5350"/>
+          <ellipse cx="-20" cy="8"  rx="10" ry="6" fill="#b71c1c" transform="rotate(-30,-20,8)"/>
+          <ellipse cx="20"  cy="8"  rx="10" ry="6" fill="#b71c1c" transform="rotate(30,20,8)"/>
+          <ellipse cx="0" cy="-26" rx="10" ry="6" fill="#b71c1c"/>
+        </g>
+
+        <!-- Vase body -->
+        <path d="M90 278 Q80 240 88 220 L172 220 Q180 240 170 278 Z" fill="#c62828"/>
+        <path d="M84 220 Q130 210 176 220" stroke="#b71c1c" stroke-width="4" fill="none"/>
+        <!-- Vase top rim shine -->
+        <ellipse cx="130" cy="220" rx="46" ry="8" fill="#d32f2f" opacity="0.6"/>
+        <!-- Vase text (filled by script) -->
+        <text id="vaseLine1" x="130" y="253" font-family="Nunito,sans-serif" font-size="11"
+              font-weight="800" fill="white" text-anchor="middle">For You</text>
+        <text id="vaseLine2" x="130" y="269" font-family="Nunito,sans-serif" font-size="11"
+              font-weight="800" fill="white" text-anchor="middle">Always ♥</text>
+      </svg>
+
+      <!-- Floating envelope link -->
+      <a href="letter.html" class="envelope-link" title="Open the letter">
+        <svg viewBox="0 0 84 64" xmlns="http://www.w3.org/2000/svg" width="84" height="64">
+          <!-- envelope body -->
+          <rect x="2" y="2" width="80" height="60" rx="7" fill="#fff0f3" stroke="#e0aab8" stroke-width="2"/>
+          <!-- envelope flap -->
+          <polygon points="2,2 42,36 82,2" fill="#ffd6e0" stroke="#e0aab8" stroke-width="1.5"/>
+          <!-- wax seal -->
+          <circle cx="64" cy="48" r="10" fill="#c62828"/>
+          <text x="64" y="52" font-size="11" text-anchor="middle" fill="white">💌</text>
+        </svg>
+      </a>
+    </div>
+
+  </main>
+
+  <script>
+    // Fill vase text from config
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof GIFT_CONFIG !== 'undefined' && GIFT_CONFIG.vaseText) {
+        const [l1, l2] = GIFT_CONFIG.vaseText;
+        if (l1) document.getElementById('vaseLine1').textContent = l1;
+        if (l2) document.getElementById('vaseLine2').textContent = l2;
+      }
+    });
+  </script>
+</body>
+</html>
